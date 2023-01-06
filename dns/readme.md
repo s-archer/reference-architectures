@@ -44,6 +44,8 @@ Instead of worrying about DNS outages and purchasing additional DNS infrastructu
 
 ## diagram
 
+![alt text](https://github.com/s-archer/reference-architectures/blob/main/XC DNS Reference Architecture Diagrams.jpg?raw=true)
+
 ## Scale on Demand
 BIG-IP DNS hyperscales to 100 million RPS, which means that even large surges of DNS requests (including the malicious ones) won’t disrupt your content or affect the availability of critical applications. Your network administrators can rest easier, knowing that your site will respond to all DNS queries and remain available even during an attack. Your brand is protected, and your company can avoid an embarrassing front-page story.
 
@@ -107,3 +109,6 @@ Enjoy the peace of mind that comes with knowing their site will respond to all D
 The F5 Intelligent DNS Scale reference architecture is an end-to-end DNS delivery solution that improves web performance by reducing DNS latency, protects your web properties and brand reputation by mitigating DNS DDoS attacks, reduces data center costs by consolidating DNS infrastructure.  Most importantly, it directs your customers to the best performing components for optimal application and service delivery.
 
 The F5 Intelligent DNS Scale reference architecture also delivers the peace of mind that comes with knowing that your web applications will respond to all DNS queries—keeping your content and applications available to your users wherever and whenever they want to access them.
+
+F5 Distributed Cloud DNS:tfd
+https://f5cloud.zendesk.com/hc/en-us/sections/7057223802519-DNS-Management
