@@ -44,7 +44,7 @@ Instead of worrying about DNS outages and purchasing additional DNS infrastructu
 
 ## diagram
 
-![alt text](https://github.com/s-archer/reference-architectures/blob/main/XC DNS Reference Architecture Diagrams.jpg?raw=true)
+![alt text](https://github.com/s-archer/reference-architectures/blob/main/dns/XC%20DNS%20Reference%20Architecture%20Diagrams.jpg)
 
 ## Scale on Demand
 BIG-IP DNS hyperscales to 100 million RPS, which means that even large surges of DNS requests (including the malicious ones) won’t disrupt your content or affect the availability of critical applications. Your network administrators can rest easier, knowing that your site will respond to all DNS queries and remain available even during an attack. Your brand is protected, and your company can avoid an embarrassing front-page story.
