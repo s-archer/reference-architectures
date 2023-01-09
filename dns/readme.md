@@ -1,20 +1,31 @@
-# The F5 Distributed Cloud DNS Reference Architecture
+The F5 Distributed Cloud DNS Reference Architecture
+===================================================
 
-## Introduction
-The Domain Name System (DNS) was created in 1983 to enable people to easily identify all the computers, services, and resources connected to the Internet by name—instead of by Internet Protocol (IP) address, an impossible-to-memorize string of binary information.
+# Contents
+
+- [Introduction](#Introduction)
+- [DNS Services Are Critical to Availability](#DNS-Services-Are-Critical-to-Availability)
+- [Medium Title](#medium-title) 
+- [Small Title](#small-title) 
+
+# Introduction
+The Domain Name System (DNS) was created in 1983 to enable people to easily identify all the computers, services, and resources connected to the Internet by name—instead of by Internet Protocol (IP) address, an impossible-to-memoris
+e string of binary information.
 
 A DNS server translates the domain names you type into a browser into an IP address, which allows your device to find the service or site you're looking for on the Internet.
 
 Arguably the primary technology enabling the Internet, DNS is also one of the most important components in networking infrastructure. In addition to delivering content and applications, DNS also manages a distributed and redundant architecture to ensure high availability and fast user response time—so it is critical to have an available, intelligent, secure, and scalable DNS infrastructure. If DNS goes down, most web applications will stop working properly, affecting your business—and your brand.
 
-F5's Distributed Cloud DNS reference architecture enables organizations to build a strong DNS foundation that maximizes resources and increases service management, while remaining agile enough to support both existing and future network architectures, devices, and applications.
+This reference architecture provides guidelines for designing and implementing a Domain Name System (DNS) infrastructure using the F5 Distributed Cloud DNS SaaS platform.  
 
 ## DNS Services Are Critical to Availability
 When a user requests a web page, that request is passed to a local DNS server, which in turn communicates with the main DNS servers. Everything works well until a traffic surge or an attacker floods the server with DNS query requests. If your main DNS server gets overloaded, it will stop responding, which can render your website unavailable.
 
-DNS failures account for 41 percent of web infrastructure downtime, so it's essential to keep your DNS available. According to a survey by the Aberdeen Group, organizations lose an average of $138,000 for every hour their data centers are down. Downtime negatively affects customers, can lead to loss of revenue, and can even affect employees trying to access corporate resources, such as email.
+DNS failures account for 41 percent of web infrastructure downtime, so it's essential to keep your DNS available. According Gartner [^1] , organizations lose between $140,000 and $540,000 for every hour their services are down. Downtime negatively affects customers, can lead to loss of revenue, and can even affect employees trying to access corporate resources, such as email.
 
 That's why the importance of a strong DNS foundation can’t be overstated. Without one, your customers may not be able to access your content and applications when they want to—and if they can't get what they want from you, they'll likely go elsewhere.
+
+[^1]: https://blogs.gartner.com/andrew-lerner/2014/07/16/the-cost-of-downtime/
 
 ## Growing Pains
 There are many reasons why DNS requirements are growing so quickly. Over the last five years, the number of internet users is grown by 82 percent; the number of websites has grown from approx. 580 million to 1.24 billion and the number of DNS queries has grown by more than 100 percent.
@@ -42,9 +53,14 @@ The F5 Intelligent DNS Scale reference architecture provides a smarter way to re
 
 Instead of worrying about DNS outages and purchasing additional DNS infrastructure to combat surges, you can install an F5 BIG-IP device in your network's DMZ and let it to handle requests on behalf of your main DNS server.
 
-## diagram
+# Referece Architecture 
 
-![alt text](https://github.com/s-archer/reference-architectures/blob/main/dns/XC%20DNS%20Reference%20Architecture%20Diagrams.jpeg)
+<!-- ![F5 Distributed Cloud DNS Referece Architecture Diagram](https://github.com/s-archer/reference-architectures/blob/main/dns/XC%20DNS%20Reference%20Architecture%20Diagrams.jpeg) -->
+![F5 Distributed Cloud DNS Referece Architecture Diagram](XC%20DNS%20Reference%20Architecture%20Diagrams.jpeg)
+
+## Architecture Overview
+The DNS infrastructure consists of the following main components:
+- F5 Distributed Cloud Platform
 
 ## Scale on Demand
 BIG-IP DNS hyperscales to 100 million RPS, which means that even large surges of DNS requests (including the malicious ones) won’t disrupt your content or affect the availability of critical applications. Your network administrators can rest easier, knowing that your site will respond to all DNS queries and remain available even during an attack. Your brand is protected, and your company can avoid an embarrassing front-page story.
