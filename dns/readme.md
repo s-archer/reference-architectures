@@ -1,14 +1,18 @@
 The F5 Distributed Cloud DNS Reference Architecture
 ===================================================
 
-# Contents
+## Contents
 
 - [Introduction](#Introduction)
 - [DNS Services Are Critical to Availability](#DNS-Services-Are-Critical-to-Availability)
-- [Medium Title](#medium-title) 
-- [Small Title](#small-title) 
+- [Growing Pains](#Growing-Pains) 
+- [Security Issues](#Security-Issues) 
+- [The Traditional Solution](#The-Traditional-Solution) 
+- [Solutions for a Changing Landscape](#Solutions-for-a-Changing-Landscape) 
+- [Referece Architecture](#Referece-Architecture) 
+- [Architecture Overview](#Architecture-Overview) 
 
-# Introduction
+## Introduction
 The Domain Name System (DNS) was created in 1983 to enable people to easily identify all the computers, services, and resources connected to the Internet by name—instead of by Internet Protocol (IP) address, an impossible-to-memoris
 e string of binary information.
 
@@ -28,18 +32,20 @@ That's why the importance of a strong DNS foundation can’t be overstated. With
 [^1]: https://blogs.gartner.com/andrew-lerner/2014/07/16/the-cost-of-downtime/
 
 ## Growing Pains
-There are many reasons why DNS requirements are growing so quickly. Over the last five years, the number of internet users is grown by 82 percent; the number of websites has grown from approx. 580 million to 1.24 billion and the number of DNS queries has grown by more than 100 percent.
+There are many reasons why DNS requirements are growing so quickly. Over the last five years [^2] , the number of internet users has grown by over one billion and the number of DNS queries between 2016 and 2020 grew by over 300% from 40 billion per day to over 120 billion per day! [^3] 
 
-In addition, the number of mobile connections in use grew by 2.2 billion and nearly 60 percent of web users say they expect a website to load on their mobile phone in three seconds or less.
+[^2]: https://datareportal.com/reports/digital-2022-global-overview-report
+[^3]: https://blog.apnic.net/2020/09/28/scaling-the-root-of-the-dns/
 
-Organizations are experiencing rapid growth in terms of applications as well as the volume of traffic accessing those applications. Plus, the web applications themselves are growing and continually becoming more complex. Every icon, URL, and piece of embedded content on a web page requires a DNS lookup. Loading complex sites may require hundreds of DNS queries, and even simple smartphone apps can require numerous DNS queries just to load.
+In addition, nearly 60 percent of web users say they expect a website to load on their mobile phone in three seconds or less.
 
-In the last five years, the volume of DNS queries for .com and .net addresses has more than doubled, increasing to an average daily query load of 124 billion in the first quarter of 2016. In the same timeframe, more than 10 million domain names were added to the internet. Future growth is expected to occur at an even faster pace as more cloud implementations are deployed.
+Organizations are experiencing rapid growth in terms of applications as well as the volume of traffic accessing those applications. Plus, the web applications themselves are growing and continually becoming more complex. Every icon, URL, and piece of embedded content on a web page requires a DNS lookup. Simple smartphone apps can require numerous DNS queries just to load, but loading complex sites may require hundreds of DNS queries.
+
 
 ## Security Issues
-If DNS is the backbone of the Internet—answering all the queries and resolving all the numbers so you can find your favorite sites—it’s also one of the most vulnerable points in your network. Due to the crucial role it plays, DNS is a high-value target for attackers. DNS DDoS attacks can flood your DNS servers to the point of failure or hijack and redirect requests to a malicious server. To prevent this, a distributed high-performing, secure DNS architecture and DNS offload capabilities must be integrated into the network.
+If DNS is the backbone of the Internet—answering all the queries and resolving all the numbers so you can find your favorite sites—it’s also one of the most vulnerable points in your network. Due to the crucial role it plays, DNS is a high-value target for attackers. DNS DDoS attacks can flood your DNS servers to the point of failure or hijack and redirect requests to a malicious server. To prevent this, a distributed high-performing, secure DNS architecture is required.
 
-Generally, organizations have a set of DNS servers, each one capable of handling up to 150,000 DNS queries per second. High-performance DNS servers can handle around 200,000 queries per second. The bad guys can easily exceed those rates, as exemplified by DNS outages affecting, Dyn, The New York Times, LinkedIn, Network Solutions, and Twitter.
+A typical DNS server is capable of handling up to 150,000 DNS queries per second. High-performance DNS servers can handle around 200,000 queries per second. Malicious attacks can easily exceed those rates, as exemplified by DNS outages affecting, Dyn, The New York Times, LinkedIn, Network Solutions, and Twitter.
 
 To address DNS surges and DNS DDoS attacks, companies add more DNS servers, which are not really needed during normal business operations. This costly solution also often requires manual intervention for changes. In addition, traditional DNS servers require frequent maintenance and patching, primarily for new vulnerabilities.
 
@@ -49,9 +55,9 @@ When looking for DNS solutions, many organizations select BIND (Berkeley Interne
 Despite its popularity, BIND requires significant maintenance multiple times a year primarily due to vulnerabilities, patches, and upgrades. It can be downloaded freely, but needs servers (an additional cost, including support contracts) and an operating system. In addition, BIND typically scales to only 50,000 responses per second (RPS), making it vulnerable to both legitimate and malicious DNS surges.
 
 ## Solutions for a Changing Landscape
-The F5 Intelligent DNS Scale reference architecture provides a smarter way to respond and scale to DNS queries and takes into account a variety of network conditions and situations to distribute user application requests and application services based on business policies, data center conditions, network conditions, and application performance.
+The F5 Distributed Cloud DNS reference architecture provides a smarter way to respond and scale to DNS queries and takes into account a variety of network conditions and situations to distribute user application requests and application services based on business policies, data center conditions, network conditions, and application performance.
 
-Instead of worrying about DNS outages and purchasing additional DNS infrastructure to combat surges, you can install an F5 BIG-IP device in your network's DMZ and let it to handle requests on behalf of your main DNS server.
+Instead of worrying about DNS outages and purchasing additional DNS infrastructure to combat surges, you can provision F5 Distributed Cloud DNS and let F5 handle requests on your behalf.
 
 # Referece Architecture 
 
@@ -61,6 +67,7 @@ Instead of worrying about DNS outages and purchasing additional DNS infrastructu
 ## Architecture Overview
 The DNS infrastructure consists of the following main components:
 - F5 Distributed Cloud Platform
+- 
 
 ## Scale on Demand
 BIG-IP DNS hyperscales to 100 million RPS, which means that even large surges of DNS requests (including the malicious ones) won’t disrupt your content or affect the availability of critical applications. Your network administrators can rest easier, knowing that your site will respond to all DNS queries and remain available even during an attack. Your brand is protected, and your company can avoid an embarrassing front-page story.
@@ -87,7 +94,6 @@ This also applies to cloud deployments or infrastructures where DNS is distribut
 
 In addition, organizations can send users to a site that will give them the best experience. BIG-IP DNS services use a range of load balancing methods and intelligent monitoring for each specific app and user. Traffic is routed according to your business policies, as well as current network and user conditions. BIG-IP DNS services includes an accurate, granular geolocation database, giving you control of traffic distribution based on user location.
 
-## diagram
 
 ## BIG-IP DNS and DNS Services
 BIG-IP DNS is a global DNS solution, providing name services at the very edge of your service delivery and access networks. By employing geographic location services, it can direct users to the best service delivery data center based on their physical location.
