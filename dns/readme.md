@@ -1,7 +1,7 @@
 The F5 Distributed Cloud DNS Reference Architecture
 ===================================================
 
-## Contents
+# Contents
 
 - [Introduction](#Introduction)
 - [DNS Services Are Critical to Availability](#DNS-Services-Are-Critical-to-Availability)
@@ -12,7 +12,7 @@ The F5 Distributed Cloud DNS Reference Architecture
 - [Referece Architecture](#Referece-Architecture) 
 - [Architecture Overview](#Architecture-Overview) 
 
-## Introduction
+# Introduction
 The Domain Name System (DNS) was created in 1983 to enable people to easily identify all the computers, services, and resources connected to the Internet by name—instead of by Internet Protocol (IP) address, an impossible-to-memoris
 e string of binary information.
 
