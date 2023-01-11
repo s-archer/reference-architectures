@@ -63,17 +63,24 @@ Instead of worrying about DNS outages and purchasing additional DNS infrastructu
 
 ## Architecture Overview
 The DNS infrastructure consists of the following main components:
-- LDNS
-- Root Server
+- Legitimate User [The Resolution Client]
+    - Is the initiator that needs to resolve a DNS name and type, for example the fully qualified domain name (FQDN) for www.example.com.  
+- LDNS (Local DNS)
+    - Recursive resolver or full-service resolver configured as the primary resolver for the Resolution Client
+- Root Servers
+    - The DNS is a hierarchy; the root zone is the zone that has no parent, as it stands at the top of the DNS hierarchy. Root servers are the authoritative name servers that answer queries for the contents of the root zone.  The root zone (.) contains all the information needed to find top-level domains (.com or .uk for example)
 - TLD Servers
+    - Top-Level Domain servers are the authoritative name servers that answer queries for the contents of the top-level domain zone.  The top-level domain zone (.) contains all the information needed to find second-level domains (example.com)
 - Threat Intelligence
 - F5® Distributed Cloud Platform 
     - Built on a high-performance global anycast network to provide highly available and responsive DNS from our global points of presence (PoPs). 
 - F5® Distributed Cloud Console
     - Part of the global controller for F5® Distributed Cloud Platform - Using this SaaS console, customers can provision services, obtain global observability, centralize logs and metrics, and create customized dashboards. The Console provides APIs that can be used for automation or integration with external services like Datadog, Splunk, etc.
 - [Optional] DNS Hidden Primary Authoritative Servers
-    - A stealth server that is a primary server for zone transfers. In this arrangement, the master name server that processes the updates is unavailable to general hosts on the Internet; it is not listed in the NS RRset. [^4]
+    - A stealth server that is a primary server for zone transfers. In this arrangement, the master name server that processes the updates is unavailable to general hosts on the Internet; it is not listed in the NS RRset [^4]
 - Origin Applications
+    - The endpoint[s] hosting the application identified by the FQDN.
+
 
 [^4]: 'DNS Terminology' https://www.rfc-editor.org/rfc/rfc8499.html 
 
