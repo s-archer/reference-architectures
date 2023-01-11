@@ -61,9 +61,6 @@ Instead of worrying about DNS outages and purchasing additional DNS infrastructu
 
 # Referece Architecture 
 
-<!-- ![F5® Distributed Cloud DNS Referece Architecture Diagram](https://github.com/s-archer/reference-architectures/blob/main/dns/XC%20DNS%20Reference%20Architecture%20Diagrams.jpeg) -->
-![F5® Distributed Cloud DNS Referece Architecture Diagram](XC%20DNS%20Reference%20Architecture%20Diagrams.jpeg)
-
 ## Architecture Overview
 The DNS infrastructure consists of the following main components:
 - LDNS
@@ -79,6 +76,10 @@ The DNS infrastructure consists of the following main components:
 - Origin Applications
 
 [^4]: 'DNS Terminology' https://www.rfc-editor.org/rfc/rfc8499.html 
+
+
+<!-- ![F5® Distributed Cloud DNS Referece Architecture Diagram](https://github.com/s-archer/reference-architectures/blob/main/dns/XC%20DNS%20Reference%20Architecture%20Diagrams.jpeg) -->
+![F5® Distributed Cloud DNS Referece Architecture Diagram](XC%20DNS%20Reference%20Architecture%20Diagrams.jpeg)
 
 ## Scale on Demand
 BIG-IP DNS hyperscales to 100 million RPS, which means that even large surges of DNS requests (including the malicious ones) won’t disrupt your content or affect the availability of critical applications. Your network administrators can rest easier, knowing that your site will respond to all DNS queries and remain available even during an attack. Your brand is protected, and your company can avoid an embarrassing front-page story.
