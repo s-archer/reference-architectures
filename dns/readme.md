@@ -76,20 +76,21 @@ The DNS infrastructure consists of the following main components:
 - Legitimate User [The Resolution Client]
     - Is the initiator that needs to resolve a DNS name (and record type[^5]), for example the fully qualified domain name (FQDN) for www.example.com.  
 - LDNS (Local DNS)
-    - Recursive resolver or full-service resolver configured as the primary resolver for the resolution client
+    - Recursive resolver or full-service resolver configured as the primary resolver for the resolution client.
 - Root Servers
-    - The DNS is a hierarchy; the root zone is the zone that has no parent, as it stands at the top of the DNS hierarchy. Root servers are the authoritative name servers that answer queries for the contents of the root zone.  The root zone (.) contains all the information needed to find top-level domains (.com or .uk for example)
+    - The DNS is a hierarchy; the root zone is the zone that has no parent, as it stands at the top of the DNS hierarchy. Root servers are the authoritative name servers that answer queries for the contents of the root zone.  The root zone (.) contains all the information needed to find top-level domains (.com or .uk for example).
 - TLD Servers
-    - Top-Level Domain servers are the authoritative name servers that answer queries for the contents of the top-level domain zone.  The top-level domain zone (.) contains all the information needed to find second-level domains (example.com)
+    - Top-Level Domain servers are the authoritative name servers that answer queries for the contents of the top-level domain zone.  The top-level domain zone (.) contains all the information needed to find second-level domains (example.com).
 - Threat Intelligence
     - Using a frequently updated list of threat sources and high-risk IP addresses, Threat Intelligence delivers contextual awareness and analysis of IP requests to identify threats from multiple sources across the Internet. The service draws on the expertise of a global threat-sensor network to detect malicious activity and IP addresses.
 - F5® Distributed Cloud Platform 
     - Built on a high-performance global anycast network to provide highly available and responsive DNS from F5's global points of presence (PoPs).  The platform is protected by F5 DDoS mitigation services that protect against large-scale volumetric DDoS in real time, defending the DNS services.
-    - F5® Distributed Cloud DNS can be configured as Primary Authoritative DNS for your zone files or as a Secondary DNS with copies of your zone files that are read-only
+    - F5® Distributed Cloud DNS can be configured as Primary Authoritative DNS for your zone files or as a Secondary DNS with copies of your zone files that are read-only.
+    - F5® Distributed Cloud DNS can perform DNS Load-Balancing, also known as Global Server Load-Balancing (GSLB).
 - F5® Distributed Cloud Console
     - Part of the global controller for F5® Distributed Cloud Platform - Using this SaaS console, customers can provision services, obtain global observability, centralise logs and metrics, and create customised dashboards. The Console provides self-service creation of API credentials, and APIs that can be used for automation or integration with external services like Datadog, Splunk, etc.
 - [Optional] DNS Hidden Primary Authoritative Servers
-    - A stealth server that is a primary server for zone transfers. In this arrangement, the master name server that processes the updates is unavailable to general hosts on the Internet; it is not listed in the NS RRset [^6]
+    - A stealth server that is a primary server for zone transfers. In this arrangement, the master name server that processes the updates is unavailable to general hosts on the Internet; it is not listed in the NS RRset[^6].  
 - Origin Applications
     - The endpoint[s] hosting the application identified by the FQDN.
 
