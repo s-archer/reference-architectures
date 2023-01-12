@@ -4,14 +4,15 @@ The F5® Distributed Cloud DNS Reference Architecture
 # Contents
 
 - [Introduction](#Introduction)
-- [DNS Services Are Critical to Availability](#DNS-Services-Are-Critical-to-Availability)
-- [Growing Pains](#Growing-Pains) 
-- [Security Issues](#Security-Issues) 
-- [The Traditional Solution](#The-Traditional-Solution) 
-- [Solutions for a Changing Landscape](#Solutions-for-a-Changing-Landscape) 
+    - [DNS Services Are Critical to Availability](#DNS-Services-Are-Critical-to-Availability)
+    - [Growing Pains](#Growing-Pains) 
+    - [Security Issues](#Security-Issues) 
+    - [The Traditional Solution](#The-Traditional-Solution) 
+    - [Solutions for a Changing Landscape](#Solutions-for-a-Changing-Landscape) 
 - [Referece Architecture](#Referece-Architecture) 
-- [Architecture Overview](#Architecture-Overview) 
-
+    - [Architecture Overview](#Architecture-Overview) 
+    - [Scale on Demand](Scale-on-Demand)
+    
 # Introduction
 The Domain Name System (DNS) was created in 1983 to enable people to easily identify all the computers, services, and resources connected to the Internet by name—instead of by Internet Protocol (IP) address, an impossible-to-memoris
 e string of binary information.
@@ -73,9 +74,9 @@ The DNS infrastructure consists of the following main components:
     - Top-Level Domain servers are the authoritative name servers that answer queries for the contents of the top-level domain zone.  The top-level domain zone (.) contains all the information needed to find second-level domains (example.com)
 - Threat Intelligence
 - F5® Distributed Cloud Platform 
-    - Built on a high-performance global anycast network to provide highly available and responsive DNS from our global points of presence (PoPs). 
+    - Built on a high-performance global anycast network to provide highly available and responsive DNS from our global points of presence (PoPs).  The platform is protected by F5 DDoS mitigation services that protect against large-scale volumetric DDoS in real time, defending your DNS services.
 - F5® Distributed Cloud Console
-    - Part of the global controller for F5® Distributed Cloud Platform - Using this SaaS console, customers can provision services, obtain global observability, centralize logs and metrics, and create customized dashboards. The Console provides APIs that can be used for automation or integration with external services like Datadog, Splunk, etc.
+    - Part of the global controller for F5® Distributed Cloud Platform - Using this SaaS console, customers can provision services, obtain global observability, centralise logs and metrics, and create customised dashboards. The Console provides self-service creation of API credentials, and APIs that can be used for automation or integration with external services like Datadog, Splunk, etc.
 - [Optional] DNS Hidden Primary Authoritative Servers
     - A stealth server that is a primary server for zone transfers. In this arrangement, the master name server that processes the updates is unavailable to general hosts on the Internet; it is not listed in the NS RRset [^4]
 - Origin Applications
@@ -89,12 +90,12 @@ The DNS infrastructure consists of the following main components:
 ![F5® Distributed Cloud DNS Referece Architecture Diagram](XC%20DNS%20Reference%20Architecture%20Diagrams.jpeg)
 
 ## Scale on Demand
-BIG-IP DNS hyperscales to 100 million RPS, which means that even large surges of DNS requests (including the malicious ones) won’t disrupt your content or affect the availability of critical applications. Your network administrators can rest easier, knowing that your site will respond to all DNS queries and remain available even during an attack. Your brand is protected, and your company can avoid an embarrassing front-page story.
+F5® Distributed Cloud DNS hyperscales to 100 million RPS, which means that even large surges of DNS requests (including the malicious ones) won’t disrupt your content or affect the availability of critical applications. Your network administrators can rest easier, knowing that your site will respond to all DNS queries and remain available even during an attack. Your brand is protected, and your company can avoid an embarrassing front-page story.
 
-## Enhance Availability with BIG-IP DNS
-The F5® Intelligent DNS Scale reference architecture helps ensure that your applications and content are continuously available to your users. One of the most important pieces of this architecture is the specifically designed DNS Express query response feature in BIG-IP DNS, which manages authoritative DNS queries by transferring zones from the primary DNS server to its own RAM.
+## Enhance Availability with F5® Distributed Cloud DNS
+The F5® Intelligent DNS Scale reference architecture helps ensure that your applications and content are continuously available to your users. One of the most important pieces of this architecture is the specifically designed DNS Express query response feature in F5® Distributed Cloud DNS, which manages authoritative DNS queries by transferring zones from the primary DNS server to its own RAM.
 
-BIG-IP DNS only has to open the DNS query packet once, as long as the request is for an address that’s in the zone that was transferred to DNS Express, simplifying the process and significantly improving performance and response times of your DNS architecture.
+F5® Distributed Cloud DNS only has to open the DNS query packet once, as long as the request is for an address that’s in the zone that was transferred to DNS Express, simplifying the process and significantly improving performance and response times of your DNS architecture.
 
 With DNS Express, the individual core of each BIG-IP device can answer approximately 125,000 to 200,000 requests per second, scaling up to more than 50 million query RPS, greater than 12 times the capacity of a typical primary DNS server.
 
@@ -111,13 +112,13 @@ By increasing the speed, availability, scalability, and security of your DNS inf
 ## Distributed DNS
 This also applies to cloud deployments or infrastructures where DNS is distributed. Organizations can replicate their high-performance DNS infrastructure in almost any environment. They may have cloud DNS for disaster recovery/business continuity, or even a cloud DNS service with signed DNSSEC zones. F5® DNS Services enhanced AXFR support offers zone transfers from a BIG-IP device to any DNS service, enabling organizations to replicate DNS in physical, virtual, and cloud environments. The DNS replication service can be sent to other BIG-IP devices or other general DNS servers in data centers or clouds that are closest to the users.
 
-In addition, organizations can send users to a site that will give them the best experience. BIG-IP DNS services use a range of load balancing methods and intelligent monitoring for each specific app and user. Traffic is routed according to your business policies, as well as current network and user conditions. BIG-IP DNS services includes an accurate, granular geolocation database, giving you control of traffic distribution based on user location.
+In addition, organizations can send users to a site that will give them the best experience. F5® Distributed Cloud DNS services use a range of load balancing methods and intelligent monitoring for each specific app and user. Traffic is routed according to your business policies, as well as current network and user conditions. F5® Distributed Cloud DNS services includes an accurate, granular geolocation database, giving you control of traffic distribution based on user location.
 
 
-## BIG-IP DNS and DNS Services
-BIG-IP DNS is a global DNS solution, providing name services at the very edge of your service delivery and access networks. By employing geographic location services, it can direct users to the best service delivery data center based on their physical location.
+## F5® Distributed Cloud DNS Services
+F5® Distributed Cloud DNS is a global DNS solution, providing name services at the very edge of your service delivery and access networks. By employing geographic location services, it can direct users to the best service delivery data center based on their physical location.
 
-BIG-IP DNS provides the following name services:
+F5® Distributed Cloud DNS provides the following name services:
 
 DNS services at the edge of the network for all internal and external services.
 Geolocation services for pinpoint application or service delivery accuracy based on location of the mobile user.
@@ -132,10 +133,10 @@ Within the data center, BIG-IP Local Traffic Manager (LTM) can ensure that your 
 
 BIG-IP LTM solutions for naming services include:
 
-Integration with BIG-IP DNS to extend rich naming services into the local data center and services network.
+Integration with F5® Distributed Cloud DNS to extend rich naming services into the local data center and services network.
 Load balancing support for both local DNS and recursive DNS.
 Support for service provider–specific protocols such as ENUM requests for SIP transactions.
-Transparent health monitors to evaluate service health before sending users to the service. BIG-IP LTM can relay health information back to BIG-IP DNS to bring application awareness to the edge of the SDN.
+Transparent health monitors to evaluate service health before sending users to the service. BIG-IP LTM can relay health information back to F5® Distributed Cloud DNS to bring application awareness to the edge of the SDN.
 Integration with iRules for granular DNS decisions and name service delivery.
 
 ## Deploying a Complete Service Delivery Infrastructure
