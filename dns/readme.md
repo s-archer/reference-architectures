@@ -146,7 +146,7 @@ F5® Distributed Cloud DNS provides the following name services:
 - Support for global DNS services
 
 
-## Deploying a Complete Service Delivery Infrastructure
+## Deploying a Complete Application Delivery Infrastructure
 F5® Distributed Cloud DNS enables high-availability and high-volume applications while simultaneously supporting millions of user requests per second. It works seamlessly with the suite of F5® Distributed Cloud Application Delivery and Application Security SaaS services to create a complete application delivery infrastructure:
 
 - Security
