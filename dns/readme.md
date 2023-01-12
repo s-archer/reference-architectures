@@ -93,6 +93,9 @@ The DNS infrastructure consists of the following main components:
     - A stealth server that is a primary server for zone transfers. In this arrangement, the master name server that processes the updates is unavailable to general hosts on the Internet; it is not listed in the NS RRset[^6].  
 - Origin Applications
     - The endpoint[s] hosting the application identified by the FQDN.
+&nbsp;
+
+&nbsp;
 
 [^5]: '3.2.2. TYPE values' https://www.ietf.org/rfc/rfc1035.html
 [^6]: 'DNS Terminology' https://www.rfc-editor.org/rfc/rfc8499.html 
