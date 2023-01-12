@@ -11,8 +11,16 @@ The F5® Distributed Cloud DNS Reference Architecture
     - [Solutions for a Changing Landscape](#Solutions-for-a-Changing-Landscape) 
 - [Referece Architecture](#Referece-Architecture) 
     - [Architecture Overview](#Architecture-Overview) 
-    - [Scale on Demand](Scale-on-Demand)
-    
+    - [Scale on Demand](#Scale-on-Demand)
+    - [Enhanced Availability](#Enhanced-Availability)
+    - [DNS Security](#DNS-Security)
+    - [DNS Services at the Edge](#DNS-Services-at-the-Edge)
+    - [Distributed DNS](#Distributed-DNS)
+- [F5® Distributed Cloud DNS Services](#F5®-Distributed-Cloud-DNS-Services)
+    - [Deploying a Complete Application Delivery Infrastructure](#Deploying-a-Complete-Application-Delivery-Infrastructure) 
+    - [Conclusion](#Conclusion)
+
+
 # Introduction
 The Domain Name System (DNS) was created in 1983 to enable people to easily identify all the computers, services, and resources connected to the Internet by name—instead of by Internet Protocol (IP) address, an impossible-to-memoris
 e string of binary information.
@@ -92,19 +100,19 @@ The DNS infrastructure consists of the following main components:
 ## Scale on Demand
 F5® Distributed Cloud DNS hyperscales to 100 million RPS, which means that even large surges of DNS requests (including the malicious ones) won’t disrupt your content or affect the availability of critical applications. Your network administrators can rest easier, knowing that your site will respond to all DNS queries and remain available even during an attack. Your brand is protected, and your company can avoid an embarrassing front-page story.
 
-## Enhance Availability with F5® Distributed Cloud DNS
+## Enhanced Availability
 The F5® Intelligent DNS Scale reference architecture helps ensure that your applications and content are continuously available to your users. One of the most important pieces of this architecture is the specifically designed DNS Express query response feature in F5® Distributed Cloud DNS, which manages authoritative DNS queries by transferring zones from the primary DNS server to its own RAM.
 
 F5® Distributed Cloud DNS only has to open the DNS query packet once, as long as the request is for an address that’s in the zone that was transferred to DNS Express, simplifying the process and significantly improving performance and response times of your DNS architecture.
 
 With DNS Express, the individual core of each BIG-IP device can answer approximately 125,000 to 200,000 requests per second, scaling up to more than 50 million query RPS, greater than 12 times the capacity of a typical primary DNS server.
 
-## The BIG-IP Platform: Your Firewall in the DMZ
+## DNS Security
 Each BIG-IP device is ICSA Labs Certified as a network firewall. By intelligently evaluating the reputation of Internet hosts, the BIG-IP device can prevent attackers from knocking your DNS offline with a DNS DDoS attack, stealing data, compromising corporate resources, or otherwise disrupting your business. 
 
 In addition, DNSSEC can protect your DNS infrastructure, including cloud deployments, from cache poisoning attacks and domain hijacks. With DNSSEC support, you can digitally sign and support your DNS query with encrypted responses, enabling the resolver to determine the authenticity of the response and preventing DNS hijacking and cache poisoning. The F5® IP Intelligence service enhances your overall security by denying access to IP addresses known to be infected with malware, in contact with malware distribution points, and with poor reputations.
 
-## DNS Services at the Edge of the Network
+## DNS Services at the Edge
 The F5® Intelligent DNS Scale reference architecture also helps keep your content and applications available by responding to DNS queries from the edge of the network, rather than from deep within your critical infrastructure. When you offload DNS responses to the BIG-IP platform, requests don’t reach the back end of your network, which greatly increases your ability to scale and respond to DNS surges along with protecting your DNS infrastructure.
 
 By increasing the speed, availability, scalability, and security of your DNS infrastructure, the F5® Intelligent DNS Scale reference architecture makes sure your customers, and your employees, can access your critical web, application, and database services whenever they need them.
@@ -115,7 +123,7 @@ This also applies to cloud deployments or infrastructures where DNS is distribut
 In addition, organizations can send users to a site that will give them the best experience. F5® Distributed Cloud DNS services use a range of load balancing methods and intelligent monitoring for each specific app and user. Traffic is routed according to your business policies, as well as current network and user conditions. F5® Distributed Cloud DNS services includes an accurate, granular geolocation database, giving you control of traffic distribution based on user location.
 
 
-## F5® Distributed Cloud DNS Services
+# F5® Distributed Cloud DNS Services
 F5® Distributed Cloud DNS is a global DNS solution, providing name services at the very edge of your service delivery and access networks. By employing geographic location services, it can direct users to the best service delivery data center based on their physical location.
 
 F5® Distributed Cloud DNS provides the following name services:
