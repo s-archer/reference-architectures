@@ -84,7 +84,8 @@ The DNS infrastructure consists of the following main components:
 - Threat Intelligence
     - Using a frequently updated list of threat sources and high-risk IP addresses, Threat Intelligence delivers contextual awareness and analysis of IP requests to identify threats from multiple sources across the Internet. The service draws on the expertise of a global threat-sensor network to detect malicious activity and IP addresses.
 - F5® Distributed Cloud Platform 
-    - Built on a high-performance global anycast network to provide highly available and responsive DNS from our global points of presence (PoPs).  The platform is protected by F5 DDoS mitigation services that protect against large-scale volumetric DDoS in real time, defending your DNS services.
+    - Built on a high-performance global anycast network to provide highly available and responsive DNS from F5's global points of presence (PoPs).  The platform is protected by F5 DDoS mitigation services that protect against large-scale volumetric DDoS in real time, defending the DNS services.
+    - F5® Distributed Cloud DNS can be configured as Primary Authoritative DNS for your zone files or as a Secondary DNS with copies of your zone files that are read-only
 - F5® Distributed Cloud Console
     - Part of the global controller for F5® Distributed Cloud Platform - Using this SaaS console, customers can provision services, obtain global observability, centralise logs and metrics, and create customised dashboards. The Console provides self-service creation of API credentials, and APIs that can be used for automation or integration with external services like Datadog, Splunk, etc.
 - [Optional] DNS Hidden Primary Authoritative Servers
