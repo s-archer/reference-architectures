@@ -82,6 +82,7 @@ The DNS infrastructure consists of the following main components:
 - TLD Servers
     - Top-Level Domain servers are the authoritative name servers that answer queries for the contents of the top-level domain zone.  The top-level domain zone (.) contains all the information needed to find second-level domains (example.com)
 - Threat Intelligence
+    - Using a frequently updated list of threat sources and high-risk IP addresses, Threat Intelligence delivers contextual awareness and analysis of IP requests to identify threats from multiple sources across the Internet. The service draws on the expertise of a global threat-sensor network to detect malicious activity and IP addresses.
 - F5® Distributed Cloud Platform 
     - Built on a high-performance global anycast network to provide highly available and responsive DNS from our global points of presence (PoPs).  The platform is protected by F5 DDoS mitigation services that protect against large-scale volumetric DDoS in real time, defending your DNS services.
 - F5® Distributed Cloud Console
