@@ -189,4 +189,4 @@ DevOps-friendly F5® Distributed Cloud DNS delivers the high performance, securi
 
 F5® Distributed Cloud DNS reference architecture also delivers the peace of mind that comes with knowing that your web applications will respond to all DNS queries—keeping your content and applications available to your users wherever and whenever they want to access them.
 
-![F5® Distributed Cloud DNS](https://www.f5.com/cloud/products/dns)
+[F5® Distributed Cloud DNS](https://www.f5.com/cloud/products/dns)
