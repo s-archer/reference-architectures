@@ -109,11 +109,8 @@ The DNS infrastructure consists of the following main components:
 F5® Distributed Cloud DNS hyperscales to millions of RPS, which means that even large surges of DNS requests (including the malicious ones) won’t disrupt your content or affect the availability of critical applications. Your network administrators can rest easier, knowing that your site will respond to all DNS queries and remain available even during an attack. Your brand is protected, and your company can avoid an embarrassing front-page story.
 
 ## Enhanced Availability
-As a SaaS-based, cloud-delivered solution, Distributed Cloud DNS
-offers global auto-scaling, so you keep up with demand as the number of applications
-increases, traffic patterns change, and request volumes grow exponentially. Adjust DNS
-and security policies in real time and publish new apps with DNS instantaneously, all
-while paying only for what you use with no added overhead or costs.
+As a SaaS-based, cloud-delivered solution, F5® Distributed Cloud DNS offers global auto-scaling, so you keep up with demand as the number of applications increases, traffic patterns change, and request volumes grow exponentially. Adjust DNS and security policies in real time and publish new apps with DNS instantaneously, all
+while only paying for what you use, with no added overhead or costs.
 
 F5® Distributed Cloud DNS helps ensure that your applications and content are continuously available to your users. Built-in redundancy makes your system available even with primary failures.
 
