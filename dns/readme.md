@@ -33,7 +33,7 @@ This reference architecture provides guidelines for designing and implementing a
 ## DNS Services Are Critical to Availability
 When a user requests a web page, that request is passed to a local DNS server, which in turn communicates with the main DNS servers (DNS Root Server, Top-Level Domain Servers, Second-Level Domain Servers and so on). Everything works well until a traffic surge or an attacker floods the server with DNS query requests. If your main DNS server gets overloaded, it will stop responding, which can render your website unavailable.
 
-DNS failures account for 41 percent of web infrastructure downtime, so it's essential to keep your DNS available. According Gartner [^1] , organizations lose between $140,000 and $540,000 for every hour their services are down. Downtime negatively affects customers, can lead to loss of revenue, and can even affect employees trying to access corporate resources, such as email.
+DNS failures account for 41 percent of web infrastructure downtime, so it's essential to keep your DNS available. According Gartner [^1] , organisations lose between $140,000 and $540,000 for every hour their services are down. Downtime negatively affects customers, can lead to loss of revenue, and can even affect employees trying to access corporate resources, such as email.
 
 That's why the importance of a strong DNS foundation can’t be overstated. Without one, your customers may not be able to access your content and applications when they want to—and if they can't get what they want from you, they'll likely go elsewhere.
 
@@ -49,7 +49,7 @@ In addition, according to Google, 53 percent of visits to a mobile web sites are
 
 [^4]: https://www.thinkwithgoogle.com/consumer-insights/consumer-trends/mobile-site-load-time-statistics/ 
 
-Organizations are experiencing rapid growth in terms of applications as well as the volume of traffic accessing those applications. Plus, the web applications themselves are growing and continually becoming more complex. Every icon, URL, and piece of embedded content on a web page requires a DNS lookup. Simple smartphone apps can require numerous DNS queries just to load, but loading complex sites may require hundreds of DNS queries.
+Organisations are experiencing rapid growth in terms of applications as well as the volume of traffic accessing those applications. Plus, the web applications themselves are growing and continually becoming more complex. Every icon, URL, and piece of embedded content on a web page requires a DNS lookup. Simple smartphone apps can require numerous DNS queries just to load, but loading complex sites may require hundreds of DNS queries.
 
 
 ## Security Issues
@@ -60,7 +60,7 @@ A typical DNS server is capable of handling up to 150,000 DNS queries per second
 To address DNS surges and DNS DDoS attacks, companies add more DNS servers, which are not really needed during normal business operations. This costly solution also often requires manual intervention for changes. In addition, traditional DNS servers require frequent maintenance and patching, primarily for new vulnerabilities.
 
 ## The Traditional Solution
-When looking for DNS solutions, many organizations select BIND (Berkeley Internet Naming Daemon), the Internet's original DNS resolver. Installed on approximately 80 percent of the world's DNS servers, BIND is an open-source project maintained by Internet Systems Consortium (ISC). ISC is a non-profit organization with a for-profit consulting arm called DNS-CO, which offers 4 different levels of subscriptions and support services.
+When looking for DNS solutions, many organisations select BIND (Berkeley Internet Naming Daemon), the Internet's original DNS resolver. Installed on approximately 80 percent of the world's DNS servers, BIND is an open-source project maintained by Internet Systems Consortium (ISC). ISC is a non-profit organisation with a for-profit consulting arm called DNS-CO, which offers 4 different levels of subscriptions and support services.
 
 Despite its popularity, BIND requires significant maintenance multiple times a year primarily due to vulnerabilities, patches, and upgrades. It can be downloaded freely, but needs servers (an additional cost, including support contracts) and an operating system. In addition, BIND typically scales to only 50,000 responses per second (RPS), making it vulnerable to both legitimate and malicious DNS surges.
 
@@ -93,79 +93,100 @@ The DNS infrastructure consists of the following main components:
     - A stealth server that is a primary server for zone transfers. In this arrangement, the master name server that processes the updates is unavailable to general hosts on the Internet; it is not listed in the NS RRset[^6].  
 - Origin Applications
     - The endpoint[s] hosting the application identified by the FQDN.
-&nbsp;
-
-&nbsp;
 
 [^5]: '3.2.2. TYPE values' https://www.ietf.org/rfc/rfc1035.html
 [^6]: 'DNS Terminology' https://www.rfc-editor.org/rfc/rfc8499.html 
 
+<!-- Insert blank lines using &nbsp; followed by a blank line -->
 
-<!-- ![F5® Distributed Cloud DNS Referece Architecture Diagram](https://github.com/s-archer/reference-architectures/blob/main/dns/XC%20DNS%20Reference%20Architecture%20Diagrams.jpeg) -->
+&nbsp;
+
+&nbsp;
+
 ![F5® Distributed Cloud DNS Referece Architecture Diagram](XC%20DNS%20Reference%20Architecture%20Diagrams.jpeg)
 
 ## Scale on Demand
-F5® Distributed Cloud DNS hyperscales to 100 million RPS, which means that even large surges of DNS requests (including the malicious ones) won’t disrupt your content or affect the availability of critical applications. Your network administrators can rest easier, knowing that your site will respond to all DNS queries and remain available even during an attack. Your brand is protected, and your company can avoid an embarrassing front-page story.
+F5® Distributed Cloud DNS hyperscales to millions of RPS, which means that even large surges of DNS requests (including the malicious ones) won’t disrupt your content or affect the availability of critical applications. Your network administrators can rest easier, knowing that your site will respond to all DNS queries and remain available even during an attack. Your brand is protected, and your company can avoid an embarrassing front-page story.
 
 ## Enhanced Availability
-The F5® Intelligent DNS Scale reference architecture helps ensure that your applications and content are continuously available to your users. One of the most important pieces of this architecture is the specifically designed DNS Express query response feature in F5® Distributed Cloud DNS, which manages authoritative DNS queries by transferring zones from the primary DNS server to its own RAM.
+As a SaaS-based, cloud-delivered solution, Distributed Cloud DNS
+offers global auto-scaling, so you keep up with demand as the number of applications
+increases, traffic patterns change, and request volumes grow exponentially. Adjust DNS
+and security policies in real time and publish new apps with DNS instantaneously, all
+while paying only for what you use with no added overhead or costs.
 
-F5® Distributed Cloud DNS only has to open the DNS query packet once, as long as the request is for an address that’s in the zone that was transferred to DNS Express, simplifying the process and significantly improving performance and response times of your DNS architecture.
-
-With DNS Express, the individual core of each BIG-IP device can answer approximately 125,000 to 200,000 requests per second, scaling up to more than 50 million query RPS, greater than 12 times the capacity of a typical primary DNS server.
+F5® Distributed Cloud DNS helps ensure that your applications and content are continuously available to your users. Built-in redundancy makes your system available even with primary failures.
 
 ## DNS Security
-Each BIG-IP device is ICSA Labs Certified as a network firewall. By intelligently evaluating the reputation of Internet hosts, the BIG-IP device can prevent attackers from knocking your DNS offline with a DNS DDoS attack, stealing data, compromising corporate resources, or otherwise disrupting your business. 
+High-performance applications must be kept secure. That means ensuring
+not only uptime and availability but also protection from exploitation. With built-in
+DDoS protection, automatic failover, TSIG authentication, and DNSSEC capabilities,
+this service helps protect your applications from DDoS attacks and other threats.
 
-In addition, DNSSEC can protect your DNS infrastructure, including cloud deployments, from cache poisoning attacks and domain hijacks. With DNSSEC support, you can digitally sign and support your DNS query with encrypted responses, enabling the resolver to determine the authenticity of the response and preventing DNS hijacking and cache poisoning. The F5® IP Intelligence service enhances your overall security by denying access to IP addresses known to be infected with malware, in contact with malware distribution points, and with poor reputations.
+By intelligently evaluating the reputation of Internet hosts, F5® Distributed Cloud DNS can prevent attackers from knocking your DNS offline with a DNS DDoS attack, stealing data, compromising corporate resources, or otherwise disrupting your business. 
+
+In addition, DNSSEC can protect your DNS infrastructure, including cloud deployments, from cache poisoning attacks and domain hijacks. With DNSSEC support, you can digitally sign and support your DNS query with encrypted responses, enabling the resolver to determine the authenticity of the response and preventing DNS hijacking and cache poisoning. 
 
 ## DNS Services at the Edge
-The F5® Intelligent DNS Scale reference architecture also helps keep your content and applications available by responding to DNS queries from the edge of the network, rather than from deep within your critical infrastructure. When you offload DNS responses to the BIG-IP platform, requests don’t reach the back end of your network, which greatly increases your ability to scale and respond to DNS surges along with protecting your DNS infrastructure.
+F5® Distributed Cloud DNS helps keep your content and applications available by responding to DNS queries from the edge of the network, closer to your customers, and your employees,  rather than from deep within your critical infrastructure. When you offload DNS responses to F5® Distributed Cloud Platform, requests don’t reach the back end of your network, which greatly increases your ability to scale and respond to DNS surges along with protecting your DNS infrastructure.
 
-By increasing the speed, availability, scalability, and security of your DNS infrastructure, the F5® Intelligent DNS Scale reference architecture makes sure your customers, and your employees, can access your critical web, application, and database services whenever they need them.
+By increasing the speed, availability, scalability, and security of your DNS infrastructure, the F5® Distributed Cloud DNS makes sure your customers, and your employees, can access your critical web, application, and database services whenever they need them.
 
 ## Distributed DNS
-This also applies to cloud deployments or infrastructures where DNS is distributed. Organizations can replicate their high-performance DNS infrastructure in almost any environment. They may have cloud DNS for disaster recovery/business continuity, or even a cloud DNS service with signed DNSSEC zones. F5® DNS Services enhanced AXFR support offers zone transfers from a BIG-IP device to any DNS service, enabling organizations to replicate DNS in physical, virtual, and cloud environments. The DNS replication service can be sent to other BIG-IP devices or other general DNS servers in data centers or clouds that are closest to the users.
+Organisations can send users to a site that will give them the best experience. F5® Distributed Cloud DNS services use a range of load balancing methods and intelligent monitoring for each specific app and user. Traffic is routed according to your business policies, as well as current network and user conditions. F5® Distributed Cloud DNS services includes an accurate, granular geolocation database, giving you control of traffic distribution based on user location.
 
-In addition, organizations can send users to a site that will give them the best experience. F5® Distributed Cloud DNS services use a range of load balancing methods and intelligent monitoring for each specific app and user. Traffic is routed according to your business policies, as well as current network and user conditions. F5® Distributed Cloud DNS services includes an accurate, granular geolocation database, giving you control of traffic distribution based on user location.
-
+In addition, F5® Distributed Cloud DNS Services AXFR supports automatic zone transfers from any DNS service, enabling organisations to replicate DNS in physical, virtual, and cloud environments. 
 
 # F5® Distributed Cloud DNS Services
 F5® Distributed Cloud DNS is a global DNS solution, providing name services at the very edge of your service delivery and access networks. By employing geographic location services, it can direct users to the best service delivery data center based on their physical location.
 
 F5® Distributed Cloud DNS provides the following name services:
 
-DNS services at the edge of the network for all internal and external services.
-Geolocation services for pinpoint application or service delivery accuracy based on location of the mobile user.
-The IP Intelligence service safeguards infrastructures by detecting and stopping access from IP addresses associated with malicious activity.
-A single point of control for management of all global and local name services.
-Additional BIG-IP intelligent services solutions such as global application delivery, policy enforcement, NAT64 and DNS64 translation, health monitors, and the F5® scripting language, iRules.
-Support for global DNS services
-Integration with DNS iRules for granular DNS decisions and name service delivery.
-Support for service provider–specific protocols such as ENUM requests for SIP transactions.
-BIG-IP LTM and DNS Services
-Within the data center, BIG-IP Local Traffic Manager (LTM) can ensure that your applications and content remain highly available by creating a fault-tolerant architecture from the mobile edge through to the service. In addition to providing high availability, BIG-IP LTM also supports service provider–specific applications such as load balancing ENUM requests for SIP transactions.
+- DNS services at the edge of the network for all external services.
+- Geolocation services for pinpoint application or service delivery accuracy based on the location of the mobile user.
+- The Threat Intelligence service safeguards infrastructures by detecting and stopping access from IP addresses associated with malicious activity.
+- A single point of control for management of all global and local name services.
+- Support for global DNS services
 
-BIG-IP LTM solutions for naming services include:
-
-Integration with F5® Distributed Cloud DNS to extend rich naming services into the local data center and services network.
-Load balancing support for both local DNS and recursive DNS.
-Support for service provider–specific protocols such as ENUM requests for SIP transactions.
-Transparent health monitors to evaluate service health before sending users to the service. BIG-IP LTM can relay health information back to F5® Distributed Cloud DNS to bring application awareness to the edge of the SDN.
-Integration with iRules for granular DNS decisions and name service delivery.
 
 ## Deploying a Complete Service Delivery Infrastructure
-The F5® Intelligent DNS Scale reference architecture adjusts for high-availability and high-volume applications while simultaneously supporting millions of user requests per second. They work together with other BIG-IP service delivery features, such as the iRules scripting language, transparent application monitoring, , and other IP-related services to create a complete service delivery infrastructure: the F5® Service Delivery Network. Seamless scale and flexibility is achieved by leveraging the intelligent service delivery platform common to all BIG-IP devices.
+F5® Distributed Cloud DNS enables high-availability and high-volume applications while simultaneously supporting millions of user requests per second. It works seamlessly with the suite of F5® Distributed Cloud Application Delivery and Application Security SaaS services to create a complete application delivery infrastructure:
+
+- Security
+    - DDoS Mitigation
+    - Web Application Firewall (WAF)
+    - Bot Defense
+    - API Security
+    - WAAP (a combination of the four previous services)
+    - Application Infrastructure Protection (CWPP)
+    - Client-Side Defense
+    - Aggregator Management
+- Fraud and Risk
+    - Account Protection
+    - Authentication Intelligence
+- Multi-Cloud Networking
+    - Load-Balancer and K8s Gateway
+    - Multi-Cloud Transit
+    - Global Network
+    - Private Link
+- Performance and Reliability
+    - CDN 
+    - Observability
 
 ## Conclusion
-By using the F5® Intelligent DNS Scale reference architecture, organizations can:
+By using F5® Distributed Cloud DNS, organisations can:
 
-Increase the speed, availability, scalability, and security of their DNS infrastructure.
-Reduce complexity and cost by eliminating unnecessary additional DNS servers.
-Enjoy the peace of mind that comes with knowing their site will respond to all DNS requests.
-The F5® Intelligent DNS Scale reference architecture is an end-to-end DNS delivery solution that improves web performance by reducing DNS latency, protects your web properties and brand reputation by mitigating DNS DDoS attacks, reduces data center costs by consolidating DNS infrastructure.  Most importantly, it directs your customers to the best performing components for optimal application and service delivery.
+- Deploy and deliver primary DNS in minutes. Configure and provision primary and secondary DNS inminutes, powered by a cloudbased, globally distributed
+anycast network.
+- Accelerate release velocity.  Integrate DNS into CI/CD pipelines using REST-based declarative APIs.
+- Maintain high availability.  Redundancy keeps your system available even with primary failures.
+- Add resilience to your existing DNS infrastructure.  Ensure high availability of your DNS environments with seamless failover to F5 Distributed Cloud DNS.
+- Scale instantly.  Automatically scale to respond to large query volumes.
+- Secure applications.  Prevent distributed denialof-service (DDoS) attacks or manipulation of domain responses with built-in protection.
+- Get utility-based pricing.  Pay only for what you use.  Pricing is based on the number of zones, and options include an Individual Plan, Teams Plan, and Organization Plan, with a free monthly version available. 
 
-The F5® Intelligent DNS Scale reference architecture also delivers the peace of mind that comes with knowing that your web applications will respond to all DNS queries—keeping your content and applications available to your users wherever and whenever they want to access them.
+DevOps-friendly F5® Distributed Cloud DNS delivers the high performance, security, and global resiliency—across clouds, geographies, and availability zones—that your users expect from your apps in today’s demanding marketplace.
 
-F5® Distributed Cloud DNS:tfd
-https://f5cloud.zendesk.com/hc/en-us/sections/7057223802519-DNS-Management
+F5® Distributed Cloud DNS reference architecture also delivers the peace of mind that comes with knowing that your web applications will respond to all DNS queries—keeping your content and applications available to your users wherever and whenever they want to access them.
+
+![F5® Distributed Cloud DNS](https://www.f5.com/cloud/products/dns)
