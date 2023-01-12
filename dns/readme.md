@@ -76,7 +76,7 @@ The DNS infrastructure consists of the following main components:
 - Legitimate User [The Resolution Client]
     - Is the initiator that needs to resolve a DNS name (and record type[^5]), for example the fully qualified domain name (FQDN) for www.example.com.  
 - LDNS (Local DNS)
-    - Recursive resolver or full-service resolver configured as the primary resolver for the Resolution Client
+    - Recursive resolver or full-service resolver configured as the primary resolver for the resolution client
 - Root Servers
     - The DNS is a hierarchy; the root zone is the zone that has no parent, as it stands at the top of the DNS hierarchy. Root servers are the authoritative name servers that answer queries for the contents of the root zone.  The root zone (.) contains all the information needed to find top-level domains (.com or .uk for example)
 - TLD Servers
