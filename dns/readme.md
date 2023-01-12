@@ -22,8 +22,7 @@ The F5® Distributed Cloud DNS Reference Architecture
 
 
 # Introduction
-The Domain Name System (DNS) was created in 1983 to enable people to easily identify all the computers, services, and resources connected to the Internet by name—instead of by Internet Protocol (IP) address, an impossible-to-memoris
-e string of binary information.
+The Domain Name System (DNS) was created in 1983 to enable people to easily identify all the computers, services, and resources connected to the Internet by name—instead of by Internet Protocol (IP) address, an impossible-to-memorise string of binary information.
 
 A DNS server translates the domain names you type into a browser into an IP address, which allows your device to find the service or site you're looking for on the Internet.
 
@@ -32,7 +31,7 @@ Arguably the primary technology enabling the Internet, DNS is also one of the mo
 This reference architecture provides guidelines for designing and implementing a Domain Name System (DNS) infrastructure using the F5® Distributed Cloud DNS SaaS platform.  
 
 ## DNS Services Are Critical to Availability
-When a user requests a web page, that request is passed to a local DNS server, which in turn communicates with the main DNS servers. Everything works well until a traffic surge or an attacker floods the server with DNS query requests. If your main DNS server gets overloaded, it will stop responding, which can render your website unavailable.
+When a user requests a web page, that request is passed to a local DNS server, which in turn communicates with the main DNS servers (DNS Root Server, Top-Level Domain Servers, Second-Level Domain Servers and so on). Everything works well until a traffic surge or an attacker floods the server with DNS query requests. If your main DNS server gets overloaded, it will stop responding, which can render your website unavailable.
 
 DNS failures account for 41 percent of web infrastructure downtime, so it's essential to keep your DNS available. According Gartner [^1] , organizations lose between $140,000 and $540,000 for every hour their services are down. Downtime negatively affects customers, can lead to loss of revenue, and can even affect employees trying to access corporate resources, such as email.
 
@@ -46,13 +45,15 @@ There are many reasons why DNS requirements are growing so quickly. Over the las
 [^2]: https://datareportal.com/reports/digital-2022-global-overview-report
 [^3]: https://blog.apnic.net/2020/09/28/scaling-the-root-of-the-dns/
 
-In addition, nearly 60 percent of web users say they expect a website to load on their mobile phone in three seconds or less.
+In addition, according to Google, 53 percent of visits to a mobile web sites are abandoned if it takes longer than 3 seconds to load the page. [^4]
+
+[^4]: https://www.thinkwithgoogle.com/consumer-insights/consumer-trends/mobile-site-load-time-statistics/ 
 
 Organizations are experiencing rapid growth in terms of applications as well as the volume of traffic accessing those applications. Plus, the web applications themselves are growing and continually becoming more complex. Every icon, URL, and piece of embedded content on a web page requires a DNS lookup. Simple smartphone apps can require numerous DNS queries just to load, but loading complex sites may require hundreds of DNS queries.
 
 
 ## Security Issues
-If DNS is the backbone of the Internet—answering all the queries and resolving all the numbers so you can find your favorite sites—it’s also one of the most vulnerable points in your network. Due to the crucial role it plays, DNS is a high-value target for attackers. DNS DDoS attacks can flood your DNS servers to the point of failure or hijack and redirect requests to a malicious server. To prevent this, a distributed high-performing, secure DNS architecture is required.
+If DNS is the backbone of the Internet—answering all the queries and resolving all the IP addresses so you can find your favorite sites—it’s also one of the most vulnerable points in your infrastructure. Due to the crucial role it plays, DNS is a high-value target for attackers. DNS DDoS attacks can flood your DNS servers to the point of failure or hijack and redirect requests to a malicious server. To prevent this, a distributed high-performing, secure DNS architecture is required.
 
 A typical DNS server is capable of handling up to 150,000 DNS queries per second. High-performance DNS servers can handle around 200,000 queries per second. Malicious attacks can easily exceed those rates, as exemplified by DNS outages affecting, Dyn, The New York Times, LinkedIn, Network Solutions, and Twitter.
 
@@ -64,16 +65,16 @@ When looking for DNS solutions, many organizations select BIND (Berkeley Interne
 Despite its popularity, BIND requires significant maintenance multiple times a year primarily due to vulnerabilities, patches, and upgrades. It can be downloaded freely, but needs servers (an additional cost, including support contracts) and an operating system. In addition, BIND typically scales to only 50,000 responses per second (RPS), making it vulnerable to both legitimate and malicious DNS surges.
 
 ## A Cloud Native SaaS-Based Solution 
-The F5® Distributed Cloud DNS reference architecture provides a smarter way to respond and scale to DNS queries and takes into account a variety of network conditions and situations to distribute user application requests and application services based on business policies, data center conditions, network conditions, and application performance.
+The F5® Distributed Cloud DNS provides a smarter way to respond and scale to DNS queries and takes into account a variety of network conditions and situations to distribute user application requests and application services based on business policies, data center conditions, network conditions, and application performance.
 
-Instead of worrying about DNS outages and purchasing additional DNS infrastructure to combat surges, streamline your application deployment and management with automation and SaaS-based DNS from F5. Achieving a high-performance, responsive app experience requires consistent, scalable DNS functionality. Distributed Cloud DNS provides just that—so you can deliver fast, secure, and available applications across hybrid and multi-cloud environments.
+Instead of worrying about DNS outages and purchasing additional DNS infrastructure to combat surges, streamline your application deployment and management with automation and SaaS-based DNS from F5. Achieving a high-performance, responsive app experience requires consistent, scalable DNS services. F5® Distributed Cloud DNS provides just that—so you can deliver fast, secure, and available applications across hybrid and multi-cloud environments.
 
 # Referece Architecture 
 
 ## Architecture Overview
 The DNS infrastructure consists of the following main components:
 - Legitimate User [The Resolution Client]
-    - Is the initiator that needs to resolve a DNS name and type, for example the fully qualified domain name (FQDN) for www.example.com.  
+    - Is the initiator that needs to resolve a DNS name (and record type[^5]), for example the fully qualified domain name (FQDN) for www.example.com.  
 - LDNS (Local DNS)
     - Recursive resolver or full-service resolver configured as the primary resolver for the Resolution Client
 - Root Servers
@@ -86,12 +87,12 @@ The DNS infrastructure consists of the following main components:
 - F5® Distributed Cloud Console
     - Part of the global controller for F5® Distributed Cloud Platform - Using this SaaS console, customers can provision services, obtain global observability, centralise logs and metrics, and create customised dashboards. The Console provides self-service creation of API credentials, and APIs that can be used for automation or integration with external services like Datadog, Splunk, etc.
 - [Optional] DNS Hidden Primary Authoritative Servers
-    - A stealth server that is a primary server for zone transfers. In this arrangement, the master name server that processes the updates is unavailable to general hosts on the Internet; it is not listed in the NS RRset [^4]
+    - A stealth server that is a primary server for zone transfers. In this arrangement, the master name server that processes the updates is unavailable to general hosts on the Internet; it is not listed in the NS RRset [^6]
 - Origin Applications
     - The endpoint[s] hosting the application identified by the FQDN.
 
-
-[^4]: 'DNS Terminology' https://www.rfc-editor.org/rfc/rfc8499.html 
+[^5]: '3.2.2. TYPE values' https://www.ietf.org/rfc/rfc1035.html
+[^6]: 'DNS Terminology' https://www.rfc-editor.org/rfc/rfc8499.html 
 
 
 <!-- ![F5® Distributed Cloud DNS Referece Architecture Diagram](https://github.com/s-archer/reference-architectures/blob/main/dns/XC%20DNS%20Reference%20Architecture%20Diagrams.jpeg) -->
