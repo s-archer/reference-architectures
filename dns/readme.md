@@ -33,7 +33,7 @@ This reference architecture provides guidelines for designing and implementing a
 ## DNS Services Are Critical to Availability
 When a user requests a web page, that request is passed to a local DNS server, which in turn communicates with the main DNS servers (DNS Root Server, Top-Level Domain Servers, Second-Level Domain Servers and so on). Everything works well until a traffic surge or an attacker floods the server with DNS query requests. If your main DNS server gets overloaded, it will stop responding, which can render your website unavailable.
 
-DNS failures account for 41 percent of web infrastructure downtime, so it's essential to keep your DNS available. According Gartner [^1] , organisations lose between $140,000 and $540,000 for every hour their services are down. Downtime negatively affects customers, can lead to loss of revenue, and can even affect employees trying to access corporate resources, such as email.
+DNS failures account for 41 percent of web infrastructure downtime, so it's essential to keep your DNS available. According to Gartner [^1] , organisations lose between $140,000 and $540,000 for every hour their services are down. Downtime negatively affects customers, can lead to loss of revenue, and can even affect employees trying to access corporate resources, such as email.
 
 That's why the importance of a strong DNS foundation can’t be overstated. Without one, your customers may not be able to access your content and applications when they want to—and if they can't get what they want from you, they'll likely go elsewhere.
 
