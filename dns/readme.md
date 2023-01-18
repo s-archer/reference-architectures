@@ -69,7 +69,7 @@ The F5® Distributed Cloud DNS provides a smarter way to respond and scale to DN
 
 Instead of worrying about DNS outages and purchasing additional DNS infrastructure to combat surges, streamline your application deployment and management with automation and SaaS-based DNS from F5. Achieving a high-performance, responsive app experience requires consistent, scalable DNS services. F5® Distributed Cloud DNS provides just that—so you can deliver fast, secure, and available applications across hybrid and multi-cloud environments.
 
-# Referece Architecture 
+# Reference Architecture 
 
 ## Architecture Overview
 The DNS infrastructure consists of the following main components:
@@ -80,7 +80,7 @@ The DNS infrastructure consists of the following main components:
 - Root Servers
     - The DNS is a hierarchy; the root zone is the zone that has no parent, as it stands at the top of the DNS hierarchy. Root servers are the authoritative name servers that answer queries for the contents of the root zone.  The root zone (.) contains all the information needed to find top-level domains (.com or .uk for example).
 - TLD Servers
-    - Top-Level Domain servers are the authoritative name servers that answer queries for the contents of the top-level domain zone.  The top-level domain zone (.) contains all the information needed to find second-level domains (example.com).
+    - Top-Level Domain servers are the authoritative name servers that answer queries for the contents of the top-level domain zone.  The top-level domain zone (.com or .uk for example) contains all the delegations needed to find second-level domains (example.com).
 - Threat Intelligence
     - Using a frequently updated list of threat sources and high-risk IP addresses, Threat Intelligence delivers contextual awareness and analysis of IP requests to identify threats from multiple sources across the Internet. The service draws on the expertise of a global threat-sensor network to detect malicious activity and IP addresses.
 - F5® Distributed Cloud Platform 
