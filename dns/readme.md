@@ -82,7 +82,7 @@ The DNS infrastructure consists of the following main components:
 - TLD Servers
     - Top-Level Domain servers are the authoritative name servers that answer queries for the contents of the top-level domain zone.  The top-level domain zone (.com or .uk for example) contains all the delegations needed to find second-level domains (example.com).
 - Delegation
-    - The process by which a separate zone,or subdomain, is created beneath the apex of a given domain. Delegation happens when an NS RRset is added in the parent zone (e.g. example.com) for the child origin (e.g. subdomain.example.com).  Delegation is often used to manage a subset of your DNS name space in another DNS system such as F5® Distributed Cloud DNS, you can delegate entire subdomains to, and manage them from, F5® Distributed Cloud DNS.
+    - The process by which a separate zone, or subdomain, is created beneath the apex of a given domain. Delegation happens when an NS RRset is added in the parent zone (e.g. example.com) for the child origin (e.g. subdomain.example.com).  Delegation is often used to manage a subset of your DNS name space in another DNS system such as F5® Distributed Cloud DNS, you can delegate entire subdomains to, and manage them from, F5® Distributed Cloud DNS.
 - Threat Intelligence
     - Using a frequently updated list of threat sources and high-risk IP addresses, Threat Intelligence delivers contextual awareness and analysis of IP requests to identify threats from multiple sources across the Internet. The service draws on the expertise of a global threat-sensor network to detect malicious activity and IP addresses.
 - F5® Distributed Cloud Platform 
