@@ -82,13 +82,13 @@ The DNS infrastructure consists of the following main components:
 - TLD Servers
     - Top-Level Domain servers are the authoritative name servers that answer queries for the contents of the top-level domain zone.  The top-level domain zone (.com or .uk for example) contains all the delegations needed to find second-level domains (example.com).
 - Delegation
-    - NS host some namespace in other DNS systems such as XC, you can delegate entire subdomains and manage them from XC.
-
+    - The process by which a separate zone,or subdomain, is created beneath the apex of a given domain. Delegation happens when an NS RRset is added in the parent zone (e.g. example.com) for the child origin (e.g. subdomain.example.com).  Delegation is often used to manage a subset of your DNS name space in another DNS system such as F5® Distributed Cloud DNS, you can delegate entire subdomains to, and manage them from, F5® Distributed Cloud DNS.
 - Threat Intelligence
     - Using a frequently updated list of threat sources and high-risk IP addresses, Threat Intelligence delivers contextual awareness and analysis of IP requests to identify threats from multiple sources across the Internet. The service draws on the expertise of a global threat-sensor network to detect malicious activity and IP addresses.
 - F5® Distributed Cloud Platform 
     - Built on a high-performance global anycast network to provide highly available and responsive DNS from F5's global points of presence (PoPs).  The platform is protected by F5 DDoS mitigation services that protect against large-scale volumetric DDoS in real time, defending the DNS services.
     - F5® Distributed Cloud DNS can be configured as Primary Authoritative DNS for your zone files or as a Secondary DNS with copies of your zone files that are read-only.
+    - F5® Distributed Cloud DNS can be configured as authoritative for delegated domains.
     - F5® Distributed Cloud DNS can perform DNS Load-Balancing, also known as Global Server Load-Balancing (GSLB).
 - F5® Distributed Cloud Console
     - Part of the global controller for F5® Distributed Cloud Platform - Using this SaaS console, customers can provision services, obtain global observability, centralise logs and metrics and create customised dashboards. The Console provides self-service creation of API credentials and APIs that can be used for automation or integration with external services like Datadog, Splunk, etc.
