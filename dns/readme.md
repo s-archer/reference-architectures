@@ -58,9 +58,9 @@ A typical DNS server is capable of handling up to 150,000 DNS queries per second
 To address DNS surges and DNS DDoS attacks, companies add more DNS servers, which are not really needed during normal business operations. This costly solution also often requires manual intervention for changes. In addition, traditional DNS servers require frequent maintenance and patching, primarily for new vulnerabilities.
 
 ## The Traditional Solution
-When looking for DNS solutions, many organisations select BIND (Berkeley Internet Naming Daemon), the Internet's original DNS resolver. Installed on approximately 80 percent of the world's DNS servers, BIND is an open-source project maintained by Internet Systems Consortium (ISC). ISC is a non-profit organisation with a for-profit consulting arm called DNS-CO, which offers four different levels of subscriptions and support services.
+When looking for DNS solutions, many organisations select a generic open source solution or purchase a derivitive from a vendor. Open source software is deployed on approximately 80 percent of the world's DNS servers. 
 
-Despite its popularity, BIND requires significant maintenance multiple times a year primarily due to vulnerabilities, patches and upgrades. It can be downloaded freely, but needs servers (an additional cost, including support contracts) and an operating system. In addition, BIND typically scales to only 50,000 responses per second (RPS), making it vulnerable to both legitimate and malicious DNS surges.
+Despite their popularity, open source and derivative solutions require significant maintenance multiple times a year primarily due to vulnerabilities, patches and upgrades. Open source software can be downloaded freely, but needs servers (an additional cost, including support contracts) and an operating system. In addition, open source and derivative solutions typically scale to only 50,000 responses per second (RPS), making them vulnerable to both legitimate and malicious DNS surges.
 
 ## A Cloud Native SaaS-Based Solution 
 The F5® Distributed Cloud DNS provides a smarter way to respond and scale to DNS queries and considers a variety of network conditions and situations to distribute user application requests and application services based on business policies, data center conditions, network conditions and application performance.
@@ -88,7 +88,6 @@ The DNS infrastructure consists of the following main components:
 - F5® Distributed Cloud Platform 
     - Built on a high-performance global anycast network to provide highly available and responsive DNS from F5's global points of presence (PoPs).  The platform is protected by F5 DDoS mitigation services that protect against large-scale volumetric DDoS in real time, defending the DNS services.
     - F5® Distributed Cloud DNS can be configured as Primary Authoritative DNS for your zone files or as a Secondary DNS with copies of your zone files that are read-only.
-    - F5® Distributed Cloud DNS can be configured as authoritative for delegated domains.
     - F5® Distributed Cloud DNS can perform DNS Load-Balancing, also known as Global Server Load-Balancing (GSLB).
 - F5® Distributed Cloud Console
     - Part of the global controller for F5® Distributed Cloud Platform - Using this SaaS console, customers can provision services, obtain global observability, centralise logs and metrics and create customised dashboards. The Console provides self-service creation of API credentials and APIs that can be used for automation or integration with external services like Datadog, Splunk, etc.
@@ -128,14 +127,23 @@ By intelligently evaluating the reputation of Internet hosts, F5® Distributed C
 In addition, DNSSEC can protect your DNS infrastructure, including cloud deployments, from cache poisoning attacks and domain hijacks. With DNSSEC support, you can digitally sign and support your DNS query with encrypted responses, enabling the resolver to determine the authenticity of the response and preventing DNS hijacking and cache poisoning. 
 
 ## DNS Services at the Edge
-F5® Distributed Cloud DNS helps keep your content and applications available by responding to DNS queries from the edge of the network, closer to your customers and your employees, rather than from deep within your critical infrastructure. When you offload DNS responses to F5® Distributed Cloud Platform, requests don’t reach the back end of your network, which greatly increases your ability to scale and respond to DNS surges along with protecting your DNS infrastructure.
+F5® Distributed Cloud DNS helps keep your content and applications available by responding to DNS queries from the edge of our global anycast network, closer to your customers and your employees, rather than from deep within your critical infrastructure. When you offload DNS responses to F5® Distributed Cloud Platform, requests don’t reach the back end of your network, which greatly increases your ability to scale and respond to DNS surges along with protecting your DNS infrastructure.
 
 By increasing the speed, availability, scalability and security of your DNS infrastructure, the F5® Distributed Cloud DNS makes sure your customers and your employees can access your critical web, application and database services whenever they need them.
 
 ## Distributed DNS
-Organisations can send users to a site that will give them the best experience. F5® Distributed Cloud DNS services use a range of load balancing methods and intelligent monitoring for each specific app and user. Traffic is routed according to your business policies, as well as current network and user conditions. F5® Distributed Cloud DNS services include an accurate, granular geolocation database, giving you control of traffic distribution based on user location.
+Organisations can send users to a site that will give them the best experience. F5® Distributed Cloud DNS services use a range of load balancing methods and intelligent monitoring for each specific app and user. Traffic is routed according to your business policies, as well as current network and user conditions:
 
-In addition, F5® Distributed Cloud DNS Services AXFR supports automatic zone transfers from any DNS service, enabling organisations to replicate DNS in physical, virtual and cloud environments. 
+- The Ratio-Member load balancing method
+    - DNS Load Balancer performs load balancing requests across pool members based on the weight assigned to each pool member (application endpoint server).
+- The Round-Robin load balancing method
+    -  DNS Load Balancer distributes DNS name resolution requests in a circular and sequential pattern among the pool members.
+- The Static Persist load balancing method
+    - DNS Load Balancer uses the persist mask, with the source IP address of the LDNS, in a deterministic algorithm to persistently send requests for the same user to a specific pool member.
+- The Priority load balancing method
+    - DNS Load Balancer returns all available endpoints in a pool with the highest priority. Pool members have a priority value, starting from zero, where a lower value means a higher priority.
+
+F5® Distributed Cloud DNS services include an accurate, granular geolocation database, giving you control of traffic distribution based on user location.  In addition, F5® Distributed Cloud DNS Services AXFR supports automatic zone transfers from any DNS service, enabling organisations to replicate DNS in physical, virtual and cloud environments. 
 
 # F5® Distributed Cloud DNS Services
 F5® Distributed Cloud DNS is a global DNS solution, providing name services at the very edge of your service delivery and access networks. By employing geographic location services, it can direct users to the best service delivery data center based on their physical location.
@@ -178,6 +186,7 @@ By using F5® Distributed Cloud DNS, organisations can:
 - Deploy and deliver primary DNS in minutes. Configure and provision primary and secondary DNS in minutes, powered by a cloud-based, globally distributed anycast network.
 - Accelerate release velocity.  Integrate DNS into CI/CD pipelines using REST-based declarative APIs.
 - Maintain high availability.  Redundancy keeps your system available even with primary failures.
+- Global server load balancing (GSLB).  Intelligent DNS efficiently directs application traffic across environments globally, performs health checks, and automates responses to activities and events.
 - Add resilience to your existing DNS infrastructure.  Ensure high availability of your DNS environments with seamless failover to F5 Distributed Cloud DNS.
 - Scale instantly.  Automatically scale to respond to large query volumes.
 - Secure applications.  Prevent distributed denial-of-service (DDoS) attacks or manipulation of domain responses with built-in protection.
